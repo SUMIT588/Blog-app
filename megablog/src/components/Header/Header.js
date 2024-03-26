@@ -48,7 +48,7 @@ function Header() {
   return (
     <header className="py-3 shadow bg-gray-500">
       <Container>
-        <nav className="flex">
+        <nav className="flex text-white">
           <div className="mr-4">
             <Link to="/">
               <Logo width="70px" />
@@ -68,7 +68,7 @@ function Header() {
               ) : null
             )}
             {authStatus && (
-              <li>
+              <li className='mt-2'>
                 <LogoutBtn />
               </li>
             )}
