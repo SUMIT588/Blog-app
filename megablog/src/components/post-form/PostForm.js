@@ -20,15 +20,20 @@ export default function PostForm({ post }) {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.userData);
 
+  console.log(userData, 'userDAta')
+
   const submit = async (data) => {
-    console.log(data, "data");
+    
     if (post) {
-      const file = data.image[0]
+      const file = data?.image[0]
         ? await appwriteService.uploadFile(data.image[0])
         : null;
 
+      console.log(file, "file");
+
       if (file) {
-        appwriteService.deleteFile(post.featuredImage);
+        console.log("delete");
+        appwriteService.deleteFile(post?.featuredImage);
       }
 
       const dbPost = await appwriteService.updatePost(post.$id, {

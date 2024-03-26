@@ -9,10 +9,10 @@ import { useSelector } from "react-redux";
 function Header() {
   const authStatus = useSelector((state) => {
     console.log(state);
-    return state.status;
+    return state.auth.status;
   });
 
-  console.log(authStatus, 'auth')
+  // console.log(authStatus, 'auth')
 
   const navigate = useNavigate();
 

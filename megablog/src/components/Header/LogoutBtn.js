@@ -7,7 +7,7 @@ function LogoutBtn() {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    authService.logout().then(() => {
+    authService.deleteAccount().then(() => {
       dispatch(logout());
     }).catch((error) => console.log(
       "Logout error : ",error));

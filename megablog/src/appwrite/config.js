@@ -37,7 +37,7 @@ export class Service {
     try {
       return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
-        conf.appwriteBucketId,
+        conf.appwriteCollectionId,
         slug,
         {
           status,
@@ -101,7 +101,7 @@ export class Service {
   
   async deleteFile(fileId){
     try {
-      await this.bucket(conf.appwriteBucketId, fileId)
+      await this.bucket.deleteFile(conf.appwriteBucketId, fileId)
       return true;
     } catch (error) {
       console.log("Appwrite service :: deleteFile ::", error)
